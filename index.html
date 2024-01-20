@@ -21,5 +21,15 @@
       source="https://archive.placemark.io/placemark%202024-01-19.wacz"
       url="https://www.placemark.io/"
     ></replay-web-page>
+    <script>
+      const searchParams = new URLSearchParams(location.search);
+      const path = searchParams.get("path");
+      console.log(path);
+      if (path) {
+        document
+          .querySelector("replay-web-page")
+          .setAttribute("url", `https://www.placemark.io${path}`);
+      }
+    </script>
   </body>
 </html>
